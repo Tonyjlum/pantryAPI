@@ -1,17 +1,17 @@
 class ItemController < ApplicationController
 
   def index
-    @items = Items.all
+    @items = Item.all
     render json: @items
   end
 
   def show
-    @item = Items.find(params[:id])
+    @item = Item.find(params[:id])
     render json: @item
   end
 
   def create
-    @item = Items.create(item_params)
+    @item = Item.create(item_params)
     render json: @item
   end
 
