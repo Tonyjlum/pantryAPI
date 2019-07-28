@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Location.create(name: "Bird house")
+Item.create(
+  name: "Sunflower seeds",
+  quantity: 10,
+  note:"Seed testing",
+  location_id: 1,
+  last_purchase_date: Time.now
+ )
+ Item.create(
+   name: "Pumpkin seeds",
+   quantity: 7,
+   note:"Seed testing again",
+   location_id: 1,
+   last_purchase_date: Time.now
+  )
