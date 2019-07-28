@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string  :name
       t.integer :quantity
       t.string  :note, :default => ""
-
+      t.integer :location_id
       t.timestamps
     end
   end
