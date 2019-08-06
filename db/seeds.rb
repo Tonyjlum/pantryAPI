@@ -10,13 +10,12 @@ Item.create(
   name: "Sunflower seeds",
   quantity: 10,
   note:"Seed testing",
-  location_id: 1,
-  last_purchase_date: Time.now
+  location_id: 1
  )
  Item.create(
    name: "Pumpkin seeds",
    quantity: 7,
    note:"Seed testing again",
-   location_id: 1,
-   last_purchase_date: Time.now
+   location_id: 1
   )
+puts "Database Seeded"

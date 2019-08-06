@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_28_192602) do
     t.integer "quantity"
     t.string "note", default: ""
     t.integer "location_id"
-    t.datetime "last_purchase_date"
+    t.datetime "last_purchase_date", default: "2019-07-28 20:23:09"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
