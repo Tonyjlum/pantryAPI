@@ -7,6 +7,8 @@ class LocationController < ApplicationController
   def show
     #make serializer that returns all the location name and all items in that location for show
     @location = Location.find(params[:id])
+    # render json: @location.to_json(only: [:name, :id],
+    #                           include: [items: { only: [:name]}])
     render json: @location
   end
 

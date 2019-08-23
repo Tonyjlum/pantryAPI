@@ -11,7 +11,9 @@ class ItemController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
+    @location_id = Location.find_by(name: params[:location]).id
+    @item = Item.create(name: params[:name], location_id: @location_id, quantity: params[:quantity])
+
     render json: @item
   end
 
@@ -26,6 +28,11 @@ class ItemController < ApplicationController
     @deleted_item = @item
     @item.destroy
     render json: @deleted_item
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(:name, :location, :quantity)
   end
 
 end
