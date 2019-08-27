@@ -5,17 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Location.create(name: "Bird house")
-Item.create(
-  name: "Sunflower seeds",
-  quantity: 10,
-  note:"Seed testing",
-  location_id: 1
- )
- Item.create(
-   name: "Pumpkin seeds",
-   quantity: 7,
-   note:"Seed testing again",
-   location_id: 1
-  )
+Location.create(name: "Cart")
+Location.create(name: "Pantry One")
+Location.create(name: "Pantry Two")
+Location.create(name: "Pantry Three")
+Location.create(name: "Pantry Four")
+Location.create(name: "Pantry Top")
+
+
 puts "Database Seeded"
