@@ -20,7 +20,7 @@ class ItemController < ApplicationController
   def update
     @item = Item.find(params[:id])
     #item move to cart when less than 1.
-    @item.location_id = 1 if @item.quantity > 1
+    @item.location_id = 1 if params[:quantity] == 0
     @item.update(item_params)
     render json: @item
   end
