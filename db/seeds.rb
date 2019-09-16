@@ -11,6 +11,9 @@ Location.create(name: "Pantry Two")
 Location.create(name: "Pantry Three")
 Location.create(name: "Pantry Four")
 Location.create(name: "Pantry Top")
+Item.create(name: "Tostitos Chips", quantity: 2, location_id: 2)
+Item.create(name: "Bounty Roll", quantity: 6, location_id: 5)
+
 
 
 puts "Database Seeded"
