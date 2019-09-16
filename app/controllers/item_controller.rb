@@ -12,7 +12,7 @@ class ItemController < ApplicationController
 
   def create
     @location_id = Location.find_by(name: params[:location]).id
-    @item = Item.create(name: params[:name], location_id: @location_id, quantity: params[:quantity])
+    @item = Item.create(name: capitalize_name(params[:name]), location_id: @location_id, quantity: params[:quantity])
 
     render json: @item
   end
@@ -35,6 +35,10 @@ class ItemController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :location, :quantity)
+  end
+
+  def capitalize_name(name)
+    name.split.map(&:capitalize).join(' ')
   end
 
 end
