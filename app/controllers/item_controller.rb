@@ -19,9 +19,14 @@ class ItemController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    @item.last_purchase_date = Time.now if @item.location_id == 1
+
+    if params[:location]
+      @location_id = Location.find_by(name: params[:location]).id
+      @item.location_id = @location_id
+    end
     #item move to cart when less than 1.
     @item.location_id = 1 if params[:quantity] == 0
-    @item.last_purchase_date = Time.now if @item.location_id == 1
 
     #update new item will have a new location, quantity, and time.
     #send new locatin and quantity from app.
